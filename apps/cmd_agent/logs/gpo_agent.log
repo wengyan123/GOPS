@@ -1,0 +1,173 @@
+2017-12-27 23:23:05,648 gpo_agent ERROR Command file does not exist!
+2017-12-27 23:24:58,365 gpo_agent INFO cmd [dos2unix cmd/gpo_cmd] execution result: Fail!
+2017-12-27 23:24:58,365 gpo_agent INFO Format command file.
+2017-12-27 23:24:58,370 gpo_agent INFO cmd [dos2unix conf/cmd.allow] execution result: Fail!
+2017-12-27 23:24:58,370 gpo_agent INFO Format allow command file.
+2017-12-27 23:24:58,373 gpo_agent INFO cmd [dos2unix conf/cmd.deny] execution result: Fail!
+2017-12-27 23:24:58,374 gpo_agent INFO Format deny command file.
+2017-12-27 23:24:58,374 gpo_agent INFO Start running Command one by one...
+2017-12-27 23:24:58,374 gpo_agent DEBUG Add command: echo "hello"to execute.
+2017-12-27 23:24:58,374 gpo_agent DEBUG echo is eligible.
+2017-12-27 23:24:58,374 gpo_agent INFO cmd [echo "hello"] eligibility: True.
+2017-12-27 23:24:58,379 gpo_agent INFO cmd [echo "hello"] execution result: Success.
+2017-12-27 23:27:17,595 gpo_agent INFO Format command file.
+2017-12-27 23:27:17,600 gpo_agent INFO cmd [dos2unix cmd/gpo_cmd] execution result: Fail!
+2017-12-27 23:27:17,600 gpo_agent INFO Format allow command file.
+2017-12-27 23:27:17,604 gpo_agent INFO cmd [dos2unix conf/cmd.allow] execution result: Fail!
+2017-12-27 23:27:17,605 gpo_agent INFO Format deny command file.
+2017-12-27 23:27:17,610 gpo_agent INFO cmd [dos2unix conf/cmd.deny] execution result: Fail!
+2017-12-27 23:27:17,610 gpo_agent INFO Start running Command one by one...
+2017-12-27 23:27:17,610 gpo_agent DEBUG Add command: echo "hello"to execute.
+2017-12-27 23:27:17,611 gpo_agent DEBUG echo is eligible.
+2017-12-27 23:27:17,611 gpo_agent INFO cmd [echo "hello"] eligibility: True.
+2017-12-27 23:27:17,616 gpo_agent INFO cmd [echo "hello"] execution result: Success.
+2017-12-27 23:29:15,461 gpo_agent INFO Format command file.
+2017-12-27 23:29:15,465 gpo_agent INFO Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+2017-12-27 23:29:15,465 gpo_agent INFO Format allow command file.
+2017-12-27 23:29:15,470 gpo_agent INFO Command [dos2unix conf/cmd.allow] execution result: Fail!
+2017-12-27 23:29:15,471 gpo_agent INFO Format deny command file.
+2017-12-27 23:29:15,475 gpo_agent INFO Command [dos2unix conf/cmd.deny] execution result: Fail!
+2017-12-27 23:29:15,475 gpo_agent INFO Start running Command one by one...
+2017-12-27 23:29:15,475 gpo_agent DEBUG Add command: echo "hello" to execute.
+2017-12-27 23:29:15,475 gpo_agent DEBUG Command binary: echo is eligible.
+2017-12-27 23:29:15,476 gpo_agent INFO Command [echo "hello"] eligibility: True.
+2017-12-27 23:29:15,479 gpo_agent INFO Command [echo "hello"] execution result: Success.
+2017-12-28 12:10:15,055 gpo_agent INFO Format command file.
+2017-12-28 12:10:15,070 gpo_agent INFO Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+2017-12-28 12:10:15,070 gpo_agent INFO Format allow command file.
+2017-12-28 12:10:15,090 gpo_agent INFO Command [dos2unix conf/cmd.allow] execution result: Fail!
+2017-12-28 12:10:15,090 gpo_agent INFO Format deny command file.
+2017-12-28 12:10:15,100 gpo_agent INFO Command [dos2unix conf/cmd.deny] execution result: Fail!
+2017-12-28 12:10:15,100 gpo_agent INFO Start running Command one by one...
+2017-12-28 12:10:15,102 gpo_agent DEBUG Add command: echo "hello" to execute.
+2017-12-28 12:10:15,105 gpo_agent DEBUG Command binary: echo is eligible.
+2017-12-28 12:10:15,105 gpo_agent INFO Command [echo "hello"] eligibility: True.
+2017-12-28 12:10:15,120 gpo_agent INFO Command [echo "hello"] execution result: Success.
+2017-12-28 12:58:14,555 gpo_agent INFO Format command file.
+2017-12-28 12:58:14,577 gpo_agent INFO Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+2017-12-28 12:58:14,577 gpo_agent INFO Format allow command file.
+2017-12-28 12:58:14,588 gpo_agent INFO Command [dos2unix conf/cmd.allow] execution result: Fail!
+2017-12-28 12:58:14,589 gpo_agent INFO Format deny command file.
+2017-12-28 12:58:14,604 gpo_agent INFO Command [dos2unix conf/cmd.deny] execution result: Fail!
+2017-12-28 12:58:14,604 gpo_agent INFO Start running Command one by one...
+2017-12-28 12:58:14,605 gpo_agent DEBUG Add command: echo "hello" to execute.
+2017-12-28 12:58:14,605 gpo_agent DEBUG Command binary: echo is eligible.
+2017-12-28 12:58:14,605 gpo_agent INFO Command [echo "hello"] eligibility: True.
+2017-12-28 12:58:14,618 gpo_agent INFO Command [echo "hello"] execution result: Success.
+[2017-12-28 13:00:46,936] gpo_agent INFO MainThread: Format command file.
+[2017-12-28 13:00:46,955] gpo_agent INFO MainThread: Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+[2017-12-28 13:00:46,955] gpo_agent INFO MainThread: Format allow command file.
+[2017-12-28 13:00:46,968] gpo_agent INFO MainThread: Command [dos2unix conf/cmd.allow] execution result: Fail!
+[2017-12-28 13:00:46,969] gpo_agent INFO MainThread: Format deny command file.
+[2017-12-28 13:00:46,979] gpo_agent INFO MainThread: Command [dos2unix conf/cmd.deny] execution result: Fail!
+[2017-12-28 13:00:46,979] gpo_agent INFO MainThread: Start running Command one by one...
+[2017-12-28 13:00:46,979] gpo_agent DEBUG MainThread: Add command: echo "hello" to execute.
+[2017-12-28 13:00:46,980] gpo_agent DEBUG MainThread: Command binary: echo is eligible.
+[2017-12-28 13:00:46,980] gpo_agent INFO MainThread: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:00:46,989] gpo_agent INFO Thread-1: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:01:42,408] gpo_agent - MainThread INFO: Format command file.
+[2017-12-28 13:01:42,424] gpo_agent - MainThread INFO: Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+[2017-12-28 13:01:42,424] gpo_agent - MainThread INFO: Format allow command file.
+[2017-12-28 13:01:42,435] gpo_agent - MainThread INFO: Command [dos2unix conf/cmd.allow] execution result: Fail!
+[2017-12-28 13:01:42,435] gpo_agent - MainThread INFO: Format deny command file.
+[2017-12-28 13:01:42,449] gpo_agent - MainThread INFO: Command [dos2unix conf/cmd.deny] execution result: Fail!
+[2017-12-28 13:01:42,449] gpo_agent - MainThread INFO: Start running Command one by one...
+[2017-12-28 13:01:42,450] gpo_agent - MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:01:42,450] gpo_agent - MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:01:42,450] gpo_agent - MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:01:42,460] gpo_agent - Thread-1 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:06,662] gpo_agent-MainThread INFO: Format command file.
+[2017-12-28 13:02:06,678] gpo_agent-MainThread INFO: Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+[2017-12-28 13:02:06,678] gpo_agent-MainThread INFO: Format allow command file.
+[2017-12-28 13:02:06,689] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.allow] execution result: Fail!
+[2017-12-28 13:02:06,690] gpo_agent-MainThread INFO: Format deny command file.
+[2017-12-28 13:02:06,701] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.deny] execution result: Fail!
+[2017-12-28 13:02:06,702] gpo_agent-MainThread INFO: Start running Command one by one...
+[2017-12-28 13:02:06,702] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:06,702] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:06,702] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:06,712] gpo_agent-Thread-1 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:37,208] gpo_agent-MainThread INFO: Format command file.
+[2017-12-28 13:02:37,222] gpo_agent-MainThread INFO: Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+[2017-12-28 13:02:37,223] gpo_agent-MainThread INFO: Format allow command file.
+[2017-12-28 13:02:37,233] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.allow] execution result: Fail!
+[2017-12-28 13:02:37,234] gpo_agent-MainThread INFO: Format deny command file.
+[2017-12-28 13:02:37,244] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.deny] execution result: Fail!
+[2017-12-28 13:02:37,244] gpo_agent-MainThread INFO: Start running Command one by one...
+[2017-12-28 13:02:37,244] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:37,244] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:37,244] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:37,244] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:37,244] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:37,245] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:37,245] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:02:37,245] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:37,245] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:37,246] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:37,246] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:37,247] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:37,247] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:37,249] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:37,249] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:37,252] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:37,252] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:37,257] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:37,257] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:37,259] gpo_agent-Thread-2 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:37,259] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:02:37,260] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:02:37,266] gpo_agent-Thread-1 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:37,273] gpo_agent-Thread-4 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:37,275] gpo_agent-Thread-6 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:37,278] gpo_agent-Thread-3 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:37,278] gpo_agent-Thread-5 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:02:37,280] gpo_agent-Thread-7 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:04:52,072] gpo_agent-MainThread INFO: Format command file.
+[2017-12-28 13:04:52,090] gpo_agent-MainThread INFO: Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+[2017-12-28 13:04:52,090] gpo_agent-MainThread INFO: Format allow command file.
+[2017-12-28 13:04:52,104] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.allow] execution result: Fail!
+[2017-12-28 13:04:52,104] gpo_agent-MainThread INFO: Format deny command file.
+[2017-12-28 13:04:52,115] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.deny] execution result: Fail!
+[2017-12-28 13:04:52,115] gpo_agent-MainThread INFO: Start running Command one by one...
+[2017-12-28 13:04:52,116] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:04:52,116] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:04:52,116] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:04:52,116] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:04:52,117] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:04:52,118] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:04:52,118] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:04:52,119] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:04:52,119] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:04:52,130] gpo_agent-Thread-3 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:04:52,133] gpo_agent-Thread-2 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:04:52,134] gpo_agent-Thread-1 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:06:04,882] gpo_agent-MainThread INFO: Format command file.
+[2017-12-28 13:06:04,896] gpo_agent-MainThread INFO: Command [dos2unix cmd/gpo_cmd] execution result: Fail!
+[2017-12-28 13:06:04,896] gpo_agent-MainThread INFO: Format allow command file.
+[2017-12-28 13:06:04,907] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.allow] execution result: Fail!
+[2017-12-28 13:06:04,907] gpo_agent-MainThread INFO: Format deny command file.
+[2017-12-28 13:06:04,916] gpo_agent-MainThread INFO: Command [dos2unix conf/cmd.deny] execution result: Fail!
+[2017-12-28 13:06:04,917] gpo_agent-MainThread INFO: Start running Command one by one...
+[2017-12-28 13:06:04,917] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:06:04,917] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 13:06:04,918] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:06:04,918] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:06:04,919] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 13:06:04,919] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 13:06:04,927] gpo_agent-Thread-1 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 13:06:04,928] gpo_agent-Thread-2 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 14:12:37,999] gpo_agent-MainThread INFO: Format command file.
+[2017-12-28 14:12:38,019] gpo_agent-MainThread INFO: Command [dos2unix C:\GitHub\gto\python\gpo_agent/cmd/gpo_cmd] execution result: Fail!
+[2017-12-28 14:12:38,019] gpo_agent-MainThread INFO: Format allow command file.
+[2017-12-28 14:12:38,031] gpo_agent-MainThread INFO: Command [dos2unix C:\GitHub\gto\python\gpo_agent/conf/cmd.allow] execution result: Fail!
+[2017-12-28 14:12:38,031] gpo_agent-MainThread INFO: Format deny command file.
+[2017-12-28 14:12:38,046] gpo_agent-MainThread INFO: Command [dos2unix C:\GitHub\gto\python\gpo_agent/conf/cmd.deny] execution result: Fail!
+[2017-12-28 14:12:38,046] gpo_agent-MainThread INFO: Start running Command one by one...
+[2017-12-28 14:12:38,047] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 14:12:38,047] gpo_agent-MainThread DEBUG: Add command: echo "hello" to execute.
+[2017-12-28 14:12:38,047] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 14:12:38,047] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 14:12:38,048] gpo_agent-MainThread DEBUG: Command binary: echo is eligible.
+[2017-12-28 14:12:38,048] gpo_agent-MainThread INFO: Command [echo "hello"] eligibility: True.
+[2017-12-28 14:12:38,059] gpo_agent-Thread-1 INFO: Command [echo "hello"] execution result: Success.
+[2017-12-28 14:12:38,060] gpo_agent-Thread-2 INFO: Command [echo "hello"] execution result: Success.

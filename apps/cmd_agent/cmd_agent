@@ -1,0 +1,174 @@
+#!/usr/bin/python
+##############################################
+#
+# APP Name: cmd Agent
+# Version: 1.2.0
+# Last update: 2017/12/28
+# Author: WENG Yan (yan.weng@gemalto.com)
+#
+##############################################
+
+import subprocess
+import logging
+from os.path import isfile, realpath, dirname
+import threading
+
+from settings import LOG_FILE, DEBUG, CMD_FILE, ALLOW_CMD, DENY_CMD
+
+
+def createLogger(debug, log):
+    global logger
+
+    if debug:
+        logging.basicConfig(filename=log,
+                            filemode='a',
+                            level=logging.DEBUG,
+                            format='[%(asctime)s] %(name)s-%(threadName)s %(levelname)s: %(message)s')
+    else:
+        logging.basicConfig(filename=log,
+                            filemode='a',
+                            level=logging.INFO,
+                            format='[%(asctime)s] %(name)s-%(threadName)s %(levelname)s: %(message)s')
+
+    logger = logging.getLogger('cmd_agent')
+
+
+
+# format(dos2unix) file from GPO SERVER
+def dos2unixFile(file):
+    if isfile(file):
+        cmd = "dos2unix " + file
+        cmdWorker(cmd)
+
+
+# cron runs your command in a restricted environment
+# need to export $PATH variable
+def exportPath(path):
+    cmd = 'export PATH=$PATH:' + path
+    cmdWorker(cmd)
+
+
+# read cmd file from gpo, then return a list of cmd
+def readCmdFile(cmd_file):
+    cmd_list = []
+    try:
+        with open(cmd_file) as f:
+            for cmd in f:
+                if not cmd.strip() or cmd.find('#') != -1:
+                    continue
+                cmd_list.append(cmd.strip('\n'))
+                logger.debug("Add command: " + cmd.strip('\n') + " to execute.")
+        f.close()
+        return cmd_list
+    except Exception:
+        logger.error("Error while reading command file!")
+        exit(1)
+
+
+# check cmd eligiblity
+# If the file cmd.allow exists, only users listed in it are allowed to execute, and the cron.deny file is ignored.
+# If cmd.allow does not exist, users listed in cron.deny are not allowed to execute.
+def checkCmdEligible(cmd, allow_cmd, deny_cmd):
+    cmd_split = cmd.split(' ')
+    cmd_bin = cmd_split[0]
+
+    # If the file cmd.allow exists, only users listed in it are allowed to execute, and the cron.deny file is ignored.
+    if isfile(allow_cmd):
+        eligible = False
+        with open(allow_cmd) as fa:
+            for allow in fa:
+                if cmd_bin == allow.strip('\n'):
+                    eligible = True
+                    break
+        fa.close()
+        if eligible:
+            logger.debug("Command binary: " + cmd_bin + " is eligible.")
+        else:
+            logger.debug("Command binary: " + cmd_bin + " is not eligible.")
+        return eligible
+
+    # If cmd.allow does not exist, users listed in cron.deny are not allowed to execute.
+    if isfile(deny_cmd):
+        eligible = True
+        with open(deny_cmd) as fd:
+            for deny in fd:
+                if cmd_bin == deny.strip('\n'):
+                    eligible = False
+                    break
+        fd.close()
+        if eligible:
+            logger.debug("Command binary: " + cmd_bin + " is eligible.")
+        else:
+            logger.debug("Command binary: " + cmd_bin + " is not eligible.")
+        return eligible
+    logger.error("Neither cmd.allow nor cmd.deny exist.")
+    exit(2)
+
+
+# run cmd
+def cmdWorker(cmd):
+    if cmd is not None:
+        try:
+            return_code = subprocess.check_call(cmd, stderr=subprocess.STDOUT, shell=True)
+            if return_code == 0:
+                logger.info("Command [{0}] execution result: Success.".format(cmd.strip('\n')))
+            else:
+                logger.info("Command [{0}] execution result: Fail!".format(cmd.strip('\n')))
+        except Exception:
+            logger.info("Command [{0}] execution result: Fail!".format(cmd.strip('\n')))
+
+
+# read cmd_file to find cmd_list and pass it to cmd_worker to run
+# check cmd's eligibility before pass to cmd_worker
+def runner(cmd_file, allow_cmd, deny_cmd):
+    cmd_list = readCmdFile(cmd_file)
+    threads = []
+    if len(cmd_list) == 0:
+        logger.info("There is no command in list, nothing to do!")
+        return
+    for cmd in cmd_list:
+        eligible = checkCmdEligible(cmd, allow_cmd, deny_cmd)
+        logger.info("Command [{0}] eligibility: {1}.".format(cmd.strip('\n'), eligible))
+        if eligible:
+            t = threading.Thread(target=cmdWorker, args=(cmd,))
+            threads.append(t)
+            t.start()
+        else:
+            logger.info("Command [{0}] is not eligible, will not run it.".format(cmd.strip('\n')))
+
+
+def main():
+    whereami = dirname(realpath(__file__))
+    log = whereami.rstrip('/') + '/' + LOG_FILE
+    cmd_file = whereami.rstrip('/') + '/' + CMD_FILE
+    allow_cmd = whereami.rstrip('/') + '/' + ALLOW_CMD
+    deny_cmd = whereami.rstrip('/') + '/' + DENY_CMD
+
+    createLogger(DEBUG, log)
+
+    if isfile(cmd_file):
+        logger.info("Format command file.")
+        dos2unixFile(cmd_file)
+    else:
+        logger.error("Command file does not exist!")
+        exit(1)
+
+    if isfile(allow_cmd):
+        logger.info("Format allow command file.")
+        dos2unixFile(allow_cmd)
+    else:
+        logger.error("Allow command file does not exist!")
+        exit(2)
+
+    if isfile(deny_cmd):
+        logger.info("Format deny command file.")
+        dos2unixFile(deny_cmd)
+    else:
+        logger.info("Deny command file does not exist, ignore it!")
+
+    logger.info("Start running Command one by one...")
+    runner(cmd_file, allow_cmd, deny_cmd)
+
+
+if __name__ == "__main__":
+    main()
