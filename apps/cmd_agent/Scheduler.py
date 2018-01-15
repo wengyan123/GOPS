@@ -2,21 +2,26 @@ import queue
 import time
 import threading
 import schedule
-
+from time import strftime, localtime
 
 jobqueue = None
-start_time = None
+
+
+
+def getLocaltime():
+    return strftime("%a, %d %b %Y %H:%M:%S", localtime())
+
 
 def job1():
-    print("I'm running on thread %s. I am working on job1, it needs 3s. Current time is %s." % (threading.current_thread(), (time.time() - start_time)))
+    print("I'm running on thread %s. I am working on job1, it needs 3s. Current time is %s." % (threading.current_thread(), getLocaltime()))
     time.sleep(3)
-    print("I'm running on thread %s, I finished job1. Current time is %s." % (threading.current_thread(), (time.time() - start_time)))
+    print("I'm running on thread %s, I finished job1. Current time is %s." % (threading.current_thread(), getLocaltime()))
 
 
 def job2():
-    print("I'm running on thread %s. I am working on job2, it needs 2s. Current time is %s." % (threading.current_thread(), (time.time() - start_time)))
+    print("I'm running on thread %s. I am working on job2, it needs 2s. Current time is %s." % (threading.current_thread(), getLocaltime()))
     time.sleep(2)
-    print("I'm running on thread %s, I finished job2. Current time is %s." % (threading.current_thread(), (time.time() - start_time)))
+    print("I'm running on thread %s, I finished job2. Current time is %s." % (threading.current_thread(), getLocaltime()))
 
 
 # worker watch the jobqueue, if any job available in jobqueue, fetch it and start working
@@ -56,13 +61,11 @@ def watchdog():
     t_start = time.time()
     while 1:
         if jobqueue.qsize() > 0:
-            print("%s seconds." % (time.time() - t_start))
-            print("There are %s jobs need to do." % jobqueue.qsize())
+            print("There are %s jobs in jobqueque. Current time is %s" % (jobqueue.qsize(), getLocaltime()))
         time.sleep(1)
 
+
 def main():
-    global start_time
-    start_time = time.time()
     global jobqueue
     jobqueue = queue.Queue()
     _threads = []
@@ -75,6 +78,24 @@ def main():
     t_watchdog.start()
     _threads.append(t_watchdog)
 
+
+def parseJobs():
+    jobs = {
+        "job1": {
+            "task": "job1",
+            "schedule": {
+                "repeat": True,
+                "minute": "1"
+            }
+        },
+        "job2": {
+            "task": "job2",
+            "schedule": {
+                "repeat": True,
+                "minute": "1"
+            }
+        }
+    }
 
 if __name__ == '__main__':
     main()
