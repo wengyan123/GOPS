@@ -85,18 +85,27 @@ def parseJobs():
             "task": "job1",
             "schedule": {
                 "repeat": True,
-                "minute": "1"
+                "minute": "",
+                "hour": "",
+                "day": "",
+
             }
         },
         "job2": {
             "task": "job2",
             "schedule": {
                 "repeat": True,
-                "minute": "1"
+                "minute": "",
+                "hour": "",
             }
         }
     }
+    for key, value in jobs.items():
+        print(key)
+        print(value['task'])
+        print(value['schedule']['repeat'])
+        print(value['schedule']['minute'])
 
 if __name__ == '__main__':
-    main()
-
+    #main()
+    parseJobs()
