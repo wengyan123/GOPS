@@ -1,0 +1,11 @@
+# start django
+python manage.py runserver
+
+# start worker on host1
+python manage.py celery worker -Q host1 --loglevel=info -E
+
+# start worker on host2
+python manage.py celery worker -Q host2 --loglevel=info -E
+
+# start celery beat
+python manage.py celery beat

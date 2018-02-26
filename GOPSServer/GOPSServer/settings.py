@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from kombu import Queue, Exchange
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -132,6 +133,11 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Shanghai'
 #CELERY_RESULT_BACKEND = 'django-db'
+CELERY_ROUTES = ('periodicTasks.router.MyRouter',)
+CELERY_QUEUES = (Queue('host1', Exchange('celery'), routing_key='host1'),
+                 Queue('host2', Exchange('celery'), routing_key='host2'),
+                 )
+
 
 # RabbitMQ
 BROKER_HOST = "localhost"
