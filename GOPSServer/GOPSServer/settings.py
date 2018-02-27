@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-from kombu import Queue, Exchange
+from kombu import Queue, Exchange, binding
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -133,10 +133,24 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Shanghai'
 #CELERY_RESULT_BACKEND = 'django-db'
-CELERY_ROUTES = ('periodicTasks.router.MyRouter',)
-CELERY_QUEUES = (Queue('host1', Exchange('celery'), routing_key='host1'),
-                 Queue('host2', Exchange('celery'), routing_key='host2'),
+
+# Routing tasks
+#CELERY_ROUTES = ('periodicTasks.router.MyRouter',)
+default_exchange = Exchange('default', type='topic')
+task_exchange = Exchange('tasks', type='topic')
+CELERY_QUEUES = (Queue('default', default_exchange, routing_key='default'),
+                Queue('host1', [
+                    binding(task_exchange, routing_key='#.host1'),
+                    binding(task_exchange, routing_key='all')
+                ]),
+                Queue('host2', [
+                    binding(task_exchange, routing_key='#.host2'),
+                    binding(task_exchange, routing_key='all')
+                ]),
                  )
+task_default_exchange = 'default'
+task_default_exchange_type = 'default'
+task_default_routing_key = 'default'
 
 
 # RabbitMQ
