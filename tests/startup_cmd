@@ -16,3 +16,6 @@ python manage.py celery beat
 
 # flower
 python manage.py celery flower --port=5555
+
+# client side
+celery -A tasks worker -l info -Q host1
