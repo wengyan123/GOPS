@@ -1,8 +1,22 @@
-# Django super user
+#############################################
+# start RabbitMQ server
+#############################################
+/Users/wengyan/Dev/RabbitMQ/rabbitmq_server-3.7.2/sbin/rabbitmq-server
+
+
+
+#############################################
+# Django admin UI/super user
+#############################################
+http://127.0.0.1:8000/admin/
 wengyan
 wy123456
 
-# start django
+
+#############################################
+# Django server side
+#############################################
+# start django server
 python manage.py runserver
 
 # start worker on host1
@@ -17,5 +31,9 @@ python manage.py celery beat
 # flower
 python manage.py celery flower --port=5555
 
+
+#############################################
+# client side
+#############################################
 # client side
 celery -A tasks worker -l info -Q host1
